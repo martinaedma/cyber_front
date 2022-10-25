@@ -1,6 +1,8 @@
 import type { NextPage } from "next";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
+import { Initiator } from "../src/components/Initiator";
+import { Menu } from "../src/components/Menu";
 import { useStore } from "../src/store";
 
 const CanvasComponent = dynamic(
@@ -13,6 +15,8 @@ const Home: NextPage = () => {
 
   return (
     <div className="app-container">
+      <Initiator/>
+      <Menu/>
       <Suspense fallback={null}>
         <CanvasComponent />
       </Suspense>
